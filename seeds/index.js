@@ -3,14 +3,11 @@ const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
 const Campground = require('../models/campground');
 
-mongoose.connect(
-  "mongodb+srv://Ecomerece:Ecomerece@cluster0.cosjmaf.mongodb.net/Yelp?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true,
-  },
-);
+mongoose.connect("mongodb://0.0.0.0:27017/yelp-camp", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+});
 
 const db = mongoose.connection;
 
@@ -29,7 +26,7 @@ const seedDB = async () => {
         const price = Math.floor(Math.random() * 20) + 10;
         const camp = new Campground({
           //YOUR USER ID
-          author: '647deec08061743c6023fc9a',
+          author: "64788778c1267231b8b6596d",
           location: `${cities[random1000].city}, ${cities[random1000].state}`,
           title: `${sample(descriptors)} ${sample(places)}`,
           description:

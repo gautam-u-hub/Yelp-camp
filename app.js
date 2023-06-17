@@ -21,7 +21,8 @@ const reviewRoutes = require('./routes/reviews');
 
 const MongoDBStore = require("connect-mongo")(session);
 
-const dbUrl = "mongodb+srv://Ecomerece:Ecomerece@cluster0.cosjmaf.mongodb.net/Yelp?retryWrites=true&w=majority";
+const dbUrl =
+  "mongodb+srv://Ecomerece:Ecomerece@cluster0.cosjmaf.mongodb.net/Yelp?retryWrites=true&w=majority";
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
